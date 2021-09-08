@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { loadCars } from 'src/app/store/cars/cars.actions';
+import { selectCarsFeature } from 'src/app/store/cars/cars.selectors';
 import { Car } from '../car.model';
-import { CarService } from '../service/car.service';
 
 @Component({
   selector: 'app-cars-list',
@@ -9,13 +12,14 @@ import { CarService } from '../service/car.service';
 })
 export class CarsListComponent implements OnInit {
 
-  cars:Car[]=[];
+  /* cars:Car[]=[]; */
+  cars$: Observable<Car[]>
   
-  constructor(private carService: CarService){}
+  constructor(private store: Store){
+    this.cars$ = this.store.select(selectCarsFeature);
+  }
   ngOnInit(){
-    this.carService.getCars().subscribe((data)=>{
-      this.cars = data;
-    })
+    this.store.dispatch(loadCars());
   }
 
 }

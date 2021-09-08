@@ -13,6 +13,6 @@ import { CarCardComponent } from './car-card/car-card.component';
     CarsDetailComponent,
     CarCardComponent
     ],
-  exports: [CarsListComponent]                
+  exports: [CarsListComponent, CarsDetailComponent]                
 })
 export class CarsModule { }

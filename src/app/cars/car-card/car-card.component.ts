@@ -1,5 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
+
+
+import { selectCar } from 'src/app/store/cars/cars.actions';
+import { CarState } from 'src/app/store/cars/cars.state';
 import { Car } from '../car.model';
+
+
 
 @Component({
   selector: 'app-car-card',
@@ -9,9 +17,17 @@ import { Car } from '../car.model';
 export class CarCardComponent implements OnInit {
 
   @Input() car:Car;
-  constructor() { }
+  constructor(
+    private store:Store<CarState>,
+    private router: Router
+    ) { }
 
   ngOnInit() {
+  }
+
+  details(){
+    this.store.dispatch(selectCar({car:this.car}))
+    this.router.navigate(['/detail']);
   }
 
 }

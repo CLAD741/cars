@@ -1,16 +1,16 @@
-<div class="container">
+<div *ngIf="car$ | async as car" class="container">
   <div class="detail__title">
-    <img id="arrow" src="assets/arrow-back.png" alt="Arrow icon clickable">
-    <p>Car Model- Car Brand <br> Car year </p>
+    <img (click)="backHome()" id="arrow" src="assets/arrow-back.png" alt="Arrow icon clickable">
+       <p>{{car.model}}- {{car.brand}} <br> {{car.year}} </p>
   </div>
   <div class="detail__img">
-    <img id="img" src="https://autosdeprimera.com/v2/wp-content/uploads/2020/08/mercedes-amg-gt-2021-a.jpg" alt="Car">
+    <img id="img" [src]="car.photo" alt="Car">
   </div>
   <div class="detail__specifications">
     <div class="detail__specifications-col1">
       <div class="detail__specifications-row">
         <img src="assets/horsepower.png" alt="Horsepower Icon">
-        <p>5</p>
+        <p>{{car.specifications.horsePower}}</p>
       </div>
       <div class="detail__specifications-row">
         <img src="assets/battery.png" alt="Battery Icon">
@@ -25,7 +25,7 @@
     <div class="detail__specifications-col1">
       <div class="detail__specifications-row">
         <img src="assets/lock.png" alt="Lock Icon">
-        <p>5</p>
+        <p>{{car.specifications.airbags}}</p>
       </div>
       <div class="detail__specifications-row">
         <img src="assets/music.png" alt="Music Icon">
@@ -33,14 +33,14 @@
       </div>
       <div class="detail__specifications-row">
         <img src="assets/box.png" alt="Box Icon">
-        <p>5</p>
+        <p>{{car.specifications.dimensions}}</p>
       </div>
       
 
     </div>
   </div>
   <div class="detail__rent">
-    <p class="detail__rent-price">$ 300 USD</p>
+    <p class="detail__rent-price">$ {{car.price}} USD</p>
     <button>Rent</button>
   </div>
 

@@ -1,5 +1,5 @@
+<h2 class="car__list-header">Rent a car</h2>
+
 <div class="car__list">
-  <div  *ngFor="let car of cars">
-    <app-car-card [car]="car"></app-car-card>
-  </div>
+    <app-car-card *ngFor="let car of cars$ | async " [car]="car"></app-car-card>
 </div>

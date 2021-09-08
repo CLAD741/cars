@@ -5,6 +5,8 @@ import { CarsListComponent } from './cars/cars-list/cars-list.component';
 import { CarsDetailComponent } from './cars/cars-detail/cars-detail.component';
 
 const routes:Routes = [
+  {path: '', component: CarsListComponent},
+  {path:'detail', component: CarsDetailComponent}
 ]
 
 
