@@ -1,0 +1,60 @@
+$primary: #190840;
+$secondary: #6540f8;
+$gray: #f2f4f8;
+
+.container {
+  #img {
+    width: 300px;
+    object-fit: cover;
+  }
+
+  #arrow {
+    margin-top: 1rem;
+    margin-right: 2rem;
+    height: 1rem;
+  }
+}
+
+.detail {
+  &__title {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__img {
+    display: flex;
+    justify-content: center;
+  }
+  &__specifications {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    &-col1 {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    &-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+  }
+
+  &__rent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    &-price {
+      font-weight: 700;
+    }
+    button {
+      background: $primary;
+      color: white;
+      width: 50%;
+      border-radius: 1rem;
+    }
+  }
+}

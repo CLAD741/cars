@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="card__title">
+    {{car.model}} / {{car.year}}
+  </div>
+  <div class="card__item">
+    <img [src]="car.photo" alt="Car image">
+    <div class="card__item-data">
+      <p>{{car.brand}}</p>
+      <p class="card__item-price">$ {{car.price}} USD</p>
+      <button>Open</button>
+    </div>
+  </div>
+
+</div>
