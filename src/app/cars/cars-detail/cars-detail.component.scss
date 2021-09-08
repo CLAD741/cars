@@ -3,6 +3,8 @@ $secondary: #6540f8;
 $gray: #f2f4f8;
 
 .container {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
   #img {
     width: 300px;
     object-fit: cover;
@@ -16,6 +18,9 @@ $gray: #f2f4f8;
 }
 
 .detail {
+  &__h2 {
+    margin-left: 2rem;
+  }
   &__title {
     display: flex;
     justify-content: space-around;
@@ -28,7 +33,7 @@ $gray: #f2f4f8;
     margin-top: 1.2rem;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.2rem;
     width: 100%;
     &-col1 {
       display: flex;
@@ -46,7 +51,7 @@ $gray: #f2f4f8;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 3rem;
     &-price {
       font-weight: 700;
     }

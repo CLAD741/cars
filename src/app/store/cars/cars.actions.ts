@@ -6,5 +6,7 @@ export const loadCarsSuccess = createAction('[Cars] Load Cars Success', props<{c
 export const loadCarsFailure = createAction('[Cars] Load Cars Failure');
 
 
-export const selectCar = createAction('[Car] Select Car', props<{car:Car}>());
-export const unselectCar = createAction('[Car] Unselect Car');
+export const selectCar = createAction('[Cars] Select Car', props<{car:Car}>());
+export const unselectCar = createAction('[Cars] Unselect Car');
+
+export const filterList  = createAction('[Cars] Filter Car', props<{text:string}>());

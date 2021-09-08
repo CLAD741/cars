@@ -11,15 +11,17 @@ import { environment } from 'src/environments/environment';
 import { carReducer } from './store/cars/cars.reducer';
 import { CarsEffects } from './store/cars/cars.effects';
 import { EffectsModule } from '@ngrx/effects';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [	
+    AppComponent,
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CarsModule,
+    SharedModule,
     StoreModule.forRoot({car: carReducer}),
     EffectsModule.forRoot([CarsEffects]),
     StoreDevtoolsModule.instrument({

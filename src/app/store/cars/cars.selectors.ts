@@ -15,3 +15,9 @@ export const selectCarFeature = createSelector(
     return state.selected
   }
 );
+export const selectFilterFeature = createSelector(
+  selectFeature,
+  (state:CarState) => {
+    return state.filteredCars
+  }
+);

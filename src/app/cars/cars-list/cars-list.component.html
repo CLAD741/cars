@@ -1,5 +1,10 @@
 <h2 class="car__list-header">Rent a car</h2>
 
-<div class="car__list">
+<!-- <div *ngIf="(filteredCars$ | async)?.length == 0" class="car__list">
     <app-car-card *ngFor="let car of cars$ | async " [car]="car"></app-car-card>
+</div> -->
+<div *ngIf="(filteredCars$ | async)?.length > 0" class="car__list">
+    <app-car-card *ngFor="let fcar of filteredCars$ | async " [car]="fcar"></app-car-card>
 </div>
+
+<div class="alert" *ngIf="(filteredCars$ | async)?.length==0"> We can't find results</div>

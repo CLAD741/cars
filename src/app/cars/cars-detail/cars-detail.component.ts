@@ -21,6 +21,11 @@ export class CarsDetailComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.car$.subscribe(result => {
+      if(!result.brand){
+        this.router.navigate([''])
+      }
+    });
   }
 
   backHome(){
