@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Car } from '../car.model';
-
+import carros from '../service/carros.json';
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
-
- cars: Car[] =[
+  cars:Car[] = carros;
+ /* cars: Car[] =[
    { model: 'W30',
      photo: 'https://autosdeprimera.com/v2/wp-content/uploads/2020/08/mercedes-amg-gt-2021-a.jpg',
      year: 2020,
@@ -92,7 +92,7 @@ export class CarService {
      dimensions: "2.2x1.8x1.5"
  }
 },
-]
+] */
 constructor() { }
 
 getCars():Observable<Car[]>{

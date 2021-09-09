@@ -1,7 +1,7 @@
 <div *ngIf="car$ | async as car" class="container">
   <div class="detail__title">
     <img (click)="backHome()" id="arrow" src="assets/arrow-back.png" alt="Arrow icon clickable">
-       <p>{{car.model}}- {{car.brand}} <br> {{car.year}} </p>
+    <p>{{car.model}}- {{car.brand}} <br> {{car.year}} </p>
   </div>
   <div class="detail__img">
     <img id="img" [src]="car.photo" alt="Car">
@@ -15,11 +15,11 @@
       </div>
       <div class="detail__specifications-row">
         <img src="assets/battery.png" alt="Battery Icon">
-        <img src="assets/true.png" alt="True Icon">
+        <img [src]="car.specifications.electronicBrake?'assets/true.png':'assets/false.png'" >
       </div>
       <div class="detail__specifications-row">
         <img src="assets/cloud.png" alt="Cloud Icon">
-        <img src="assets/false.png" alt="False Icon">
+        <img [src]="car.specifications.driveTrain?'assets/true.png':'assets/false.png'" >
       </div>
       
     </div>
@@ -30,7 +30,7 @@
       </div>
       <div class="detail__specifications-row">
         <img src="assets/music.png" alt="Music Icon">
-        <img src="assets/true.png" alt="True Icon">
+        <img [src]="car.specifications.surround?'assets/true.png':'assets/false.png'" alt="True Icon">
       </div>
       <div class="detail__specifications-row">
         <img src="assets/box.png" alt="Box Icon">

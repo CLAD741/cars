@@ -3,8 +3,8 @@ $secondary: #6540f8;
 $gray: #f2f4f8;
 
 .container {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
   #img {
     width: 300px;
     object-fit: cover;
@@ -14,20 +14,25 @@ $gray: #f2f4f8;
     margin-top: 1rem;
     margin-right: 2rem;
     height: 1rem;
+    cursor: pointer;
   }
 }
 
 .detail {
   &__h2 {
-    margin-left: 2rem;
+    text-align: center;
   }
   &__title {
     display: flex;
-    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   &__img {
     display: flex;
     justify-content: center;
+    img {
+      border-radius: 6px;
+    }
   }
   &__specifications {
     margin-top: 1.2rem;
@@ -58,8 +63,9 @@ $gray: #f2f4f8;
     button {
       background: $primary;
       color: white;
-      width: 50%;
+      width: 30%;
       border-radius: 1rem;
+      cursor: pointer;
     }
   }
 }
